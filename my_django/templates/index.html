@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <h2>it's My Page</h2>
+    {%for i in student%}
+    <h2>Name:{{i.name}}</h2>
+    <h2>Mark:{{i.mark}}</h2>
+   <h2>course:{{i.course}}</h2>
+   {%if i.status%}
+   <p>Exam passed successfully</p>
+   {%else%}
+   <p>Exam Failed</p>
+   {%endif%}
+   {%endfor%}
+
+   {%for i in student%}
+   <li>Name:{{i.name|upper}},Course:{{i.course}}</li>
+   {%endfor%}
+
+   {% for i in student %}
+   <li>Name: {{ i.name }}, Course: {{i.course|default:"N/A"}}, Marks: {{ i.marks }}, Status:{{ i.status }}</li>
+{% endfor %}
+</body>
+</html>
